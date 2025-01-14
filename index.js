@@ -74,20 +74,50 @@ question7.innerHTML= "The average of this array ["+array+"] ="+average(array);
 array.in
 //Question 8
 function removeDuplicate(array){
-    count=0
-    for(let i=0;i<array.length;i++){
-        for(let j=0;j<array.length;j++){
-            if(array[i]==array[j]){
-                count=count+1
-            }
-        }
-        if(count>=2){
-            let index=array.indexOf(array[i])
-            array.pop(array[index])
-        }
-        count=0;
-    }
-    return array;
+    return [...new Set(array)]
 }
 let question8 = document.getElementById('question_8');
 question8.innerHTML="The before removing the duplicate ["+array1+"] after ="+removeDuplicate(array1);
+let question8_way = document.getElementById('question_8_way');
+question8_way.innerHTML="The before removing the duplicate ["+array1+"] after ="+removeDuplicate(array1);
+//Question 9
+function median(array){
+    let median = Math.floor(array.length/2)
+    if(array.length % 2==0){
+    let result = (array[median]+array[median+1])/2
+    }
+    else result = array[median]
+
+    return result;
+}
+let question9 = document.getElementById('question_9');
+question9.innerHTML="the median of ["+array+"]="+median(array);
+
+//question 10
+function multiplying(array){
+    let newArray =[];
+    for(let i =0;i<array.length;i++){
+        newArray.push(array[i]*2);
+    }
+    return newArray;
+}
+let question10 = document.getElementById('question_10');
+question10.innerHTML = "new array is now "+multiplying(array);
+let names = ["Shema","Arnaud","Moise","Elie","Thierry","Filemon","Pacifique","Sabin","Herve","Olivier","Audace","Igor","Manzi","Murokore","Patrick","Bosco","Joseph","Bertin","Reponse","Bonquet"];
+//question 11
+function PrintingNames(array){
+    let names = ["Shema","Arnaud","Moise","Elie","Thierry","Filemon","Pacifique","Sabin","Herve","Olivier","Audace","Igor","Manzi","Murokore","Patrick","Bosco","Joseph","Bertin","Reponse","Bonquet"];
+    return names.join('<br/>');
+}
+
+let question11 = document.getElementById('question_11');
+question11.innerHTML =  PrintingNames(array);
+//Question 12
+function sortingString(array){
+
+    return names.sort();
+}
+let question12 = document.getElementById('question_12');
+question12.innerHTML = sortingString(names);
+//question 13
+
