@@ -119,5 +119,33 @@ function sortingString(array){
 }
 let question12 = document.getElementById('question_12');
 question12.innerHTML = sortingString(names);
-//question 13
+//question 15
+function  specificLetter(array){
+    let letter = 'S';
+    namesThatStartWith =array.filter(array => array.startsWith(letter))
+    return namesThatStartWith;
+}
+let question15 = document.getElementById('question_15');
+question15.innerHTML = "the names that start with S are:"+specificLetter(names);
+//question 17
+function containLetter(array){
+    let name = "a";
+    let count =0;
+    namesWithLetter=array.filter(array => array.toUpperCase().includes('A'));
+    return namesWithLetter.length;
 
+}
+
+
+let question17 = document.getElementById('question_17');
+question17.innerHTML= "the names that contains letter a are:"+containLetter(names)
+//question 18
+function removeElements(array){
+    elements = 'Arnaud';
+    index = array.indexOf(elements);
+    array.splice(index,1);
+    return array;
+}
+
+let question18 = document.getElementById('question_18');
+question18.innerHTML = "Removed 'Arnaud'from array ="+ removeElements(names);
