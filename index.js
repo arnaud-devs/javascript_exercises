@@ -149,3 +149,36 @@ function removeElements(array){
 
 let question18 = document.getElementById('question_18');
 question18.innerHTML = "Removed 'Arnaud'from array ="+ removeElements(names);
+//question 21
+const person = {
+    name:"Shema",
+    age: 12,
+    occupation:"software developer"
+}
+function displayInformation(obj){
+    return `name: ${obj.name},age: ${obj.age}, occupation: ${obj.occupation} `
+}
+let question21=document.getElementById('question_21');
+question21.textContent = displayInformation(person)
+//Question 23 and 24
+function addObject(object,key,value){
+    object[key]= value;
+}
+function removeObject(object,key){
+    delete object[key]
+}
+let question23= document.getElementById('question_23');
+let question24= document.getElementById('question_24');
+
+addObject(person,"country","USA")
+question23.innerHTML = "adding the new property "+displayInformation(person)+` , Country : ${person.country}`
+removeObject(person,"country")
+question24.innerHTML = "adding the new property "+displayInformation(person)+` , Country : ${person.country}`
+
+//Question 25
+function listProperties(obj){
+    return Object.entries(obj).map(([key,value])=> ` ${key} : ${value} `).join(';')
+}
+let question25 = document.getElementById('question_25');
+question25.innerHTML = listProperties(person)
+//Question 26
